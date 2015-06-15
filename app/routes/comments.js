@@ -10,4 +10,10 @@ router.get('/', function(req, res, next) {
   res.send(JSON.stringify(comments));
 });
 
+router.post('/', function(req, res) {
+  comments.push(req.body);
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify(comments));
+});
+
 module.exports = router;
